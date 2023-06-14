@@ -1,0 +1,8 @@
+# Ignorar diretórios
+/node_modules
+
+# Ignorar arquivos
+.env
+
+# Ignorar arquivos de log
+yarn-error.log

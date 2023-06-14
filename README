@@ -2,3 +2,131 @@
 
 Back-end:  Node.js
 Front-end: React.js
+
+
+## Pré-Requisitos
+- VS Code
+	- Extensão ```ESLint```
+	- Extensão ```Editor Config```
+- Insomnia
+
+
+## Configurações do ambiente de trabalho
+
+1. Inicializar ```package.json```.
+```Bash
+yarn init
+```
+
+2. Inicializar ```eslintrc.json```.
+```Bash
+npx eslint --init
+```
+```
+y
+-> To check, find problens, and enforce code style
+-> JavaScript modules (import/export)
+-> None of these
+-> Yes 
+-> [] Browser [X] Node
+-> Answer questions abou your style
+	-> JSON
+	-> Tabs
+	-> Single
+	-> Windows
+	-> Yes
+-> Yes
+-> Yarn
+```
+Adicionar as linhas abixo em "rules" no ```eslintrc.json```.
+```json
+"@typescript-eslint/ban-types": "off"
+"@typescript-eslint/no-empty-interface": "off"
+```
+
+3. Adicionar dependências de desenvolvimento
+```Bash
+yarn add -D typescript ts-node-dev
+```
+
+4. Rodar ```tsc``` 
+```Bash
+yarn tsc --init
+```
+
+
+
+
+
+
+
+
+
+
+```
+
+yarn init
+
+[Baixar extensão Editor Config]
+[Criar arquivo ./.editorconfig.json]
+
+[Baixar extensão eslint no vs code]
+npx eslint --init
+y
+-> To check, find problens, and enforce code style
+-> JavaScript modules (import/export)
+-> None of these
+-> Yes 
+-> [] Browser [X] Node
+-> Answer questions abou your style
+	-> JSON
+	-> Tabs
+	-> Single
+	-> Windows
+	-> Yes
+-> Yes
+-> Yarn
+[adiciona "@typescript-eslint/ban-types	": "off" em ./eslintrc.json]
+[adiciona "@typescript-eslint/no-empty-interface": "off" em ./eslintrc.json]
+
+
+yarn tsc --init
+[Modificar tscconfig.json para saida na pasta de build]
+
+
+
+
+
+
+
+mkdir pasta_projeto
+cd mkdir
+
+yarn add express http-status-codes dotenv
+yarn -D typescript ts-node-dev @types/express 
+
+[cria ./src/index.ts]
+[cria ./src/server/Servidor.ts]
+
+
+
+[Baixar sistema Insominia]
+[Adição de rotiador]
+[Adição de scripts no package.json]
+
+==========================================================
+
+novo ".env"
+novo "./.gitignore"
+
+
+
+
+==========================================================
+
+
+
+
+[Estruturação de pastas]
+[Criação da controler]
+

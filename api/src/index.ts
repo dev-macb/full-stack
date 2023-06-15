@@ -7,7 +7,7 @@ function banner() {
     console.log('╔═╗╔═╗╦  ╔╗╔╔═╗╔╦╗╔═╗  ╦═╗╔═╗╔═╗╔╦╗');
     console.log('╠═╣╠═╝║  ║║║║ ║ ║║║╣   ╠╦╝║╣ ╚═╗ ║ ');
     console.log('╩ ╩╩  ╩  ╝╚╝╚═╝═╩╝╚═╝  ╩╚═╚═╝╚═╝ ╩ ');
-    console.log('@dev_macb                   v0.0.1\n');
+    console.log('@dev_macb                   v1.0.0\n');
 }
 
 

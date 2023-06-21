@@ -12,7 +12,6 @@ async function up(knex: Knex): Promise<void> {
             tabela.timestamp('data_nascimento').notNullable().defaultTo(knex.fn.now());
             tabela.timestamp('criado_em').notNullable().defaultTo(knex.fn.now());
             tabela.timestamp('atualizado_em').notNullable().defaultTo(knex.fn.now());
-            tabela.comment('Tabela usada para armazenar pessoas do sistema.');
         })
         .then(() => {
             console.log(`[*] Tabela "${ENomeTabelas.pessoas}" foi criada.`);

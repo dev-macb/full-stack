@@ -54,10 +54,37 @@ yarn add -D typescript ts-node-dev
 yarn tsc --init
 ```
 
+## 🗄️ Estruturação de pastas
+```
+api
+	src
+		server
+			controller
+			database
+			routes
+			shared
+```
 
 
+## 🗄️ Criação do Servidor
+```
+dotenv express http-status-codes
+@types/express
+```
 
 
+## 🗄️ Modelagem do banco de dados
+knex
+@types/knex
+sqlite3
+
+## 🗄️ Criação de controllers
+yup
+
+## 🗄️ Controle de Usuário
+
+
+## 🗄️ Testes Unitários
 
 
 

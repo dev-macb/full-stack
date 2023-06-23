@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import { rotiador } from './routes';
-import './shared/services/TraducaoYup';
+import './shared/services/YupService';
 
 
 const servidor = express();

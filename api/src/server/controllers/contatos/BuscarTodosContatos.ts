@@ -25,7 +25,7 @@ const validarBuscarTodos = ValidarConsulta(obterEsquema => ({
 
 const buscarTodos = async (request: Request<{}, {}, {}, IConsulta>, response: Response) => {
     const contagem = await ContatoProvider.contar(request.query.filtro);
-    const resultado = await ContatoProvider.buscarTodos(request.query.pagina || 1, request.query.limite || 7, request.query.filtro || '');
+    const resultado = await ContatoProvider.buscarTodos(request.query.pagina || 1, request.query.limite || 10, request.query.filtro || '');
     
     if (resultado instanceof Error) return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ errors: resultado.message }); 
     else if (contagem instanceof Error) return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ errors: contagem.message });

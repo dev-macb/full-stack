@@ -5,7 +5,7 @@ import * as deletarContato from './DeletarContato';
 import * as cadastrarContato from './CadastrarContato';
 import * as atualizarContato from './AtualizarContato';
 import * as buscarTodosContatos from './BuscarTodosContatos';
-
+import * as buscarPorPessoa from './BuscarPorPessoa';
 
 const ContatoProvider = {
     ...buscarContato,
@@ -13,7 +13,8 @@ const ContatoProvider = {
     ...deletarContato,
     ...cadastrarContato,
     ...atualizarContato,
-    ...buscarTodosContatos
+    ...buscarTodosContatos,
+    ...buscarPorPessoa
 };
 
 

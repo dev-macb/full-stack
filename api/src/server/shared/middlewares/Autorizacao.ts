@@ -16,8 +16,8 @@ const autorizacao: RequestHandler = async (request, response, next) => {
     }
 
     const dadoJWT = JWTService.autenticar(token);
-    if (dadoJWT === 'APP_SEGREDO_JWT_NAO_ENCONTRADO') return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ erro: 'Erro ao verificar o token de acesso' });
-    else if (dadoJWT === 'TOKEN_INVALIDO') return response.status(StatusCodes.UNAUTHORIZED).json({ erro: 'Não autorizado!' });
+    if (dadoJWT === 'APP_SEGREDO_JWT_NAO_ENCONTRADO') return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ erros: 'Erro ao verificar o token de acesso' });
+    else if (dadoJWT === 'TOKEN_INVALIDO') return response.status(StatusCodes.UNAUTHORIZED).json({ erros: 'Não autorizado!' });
 
     request.headers.id_usuario = dadoJWT.uid.toString();
 

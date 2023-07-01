@@ -35,7 +35,7 @@ const ValidarConsulta: TValidar = (obterTodosEsquemas) => async (request, respon
     });
 
     if (Object.entries(erroResultados).length === 0) return next();
-    else return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ erros: erroResultados });
+    else return response.status(StatusCodes.BAD_REQUEST).json({ erros: erroResultados });
 };
 
 

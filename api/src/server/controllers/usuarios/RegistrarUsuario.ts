@@ -13,7 +13,7 @@ interface ICorpo extends Omit<UsuarioModel, 'id_usuario' | 'ativo' | 'criado_em'
 
 const validarRegistrar = ValidarConsulta((obterEsquema) => ({
     body: obterEsquema<ICorpo>(yup.object().shape({
-        apelido: yup.string().required().min(3),
+        apelido: yup.string().required().min(4),
         senha: yup.string().required().min(6)
     })),
 }));
@@ -21,12 +21,13 @@ const validarRegistrar = ValidarConsulta((obterEsquema) => ({
 
 const registrar = async (request: Request<{}, {}, ICorpo>, response: Response) => {
     const dados: ICorpo = request.body;
-    
+
     const resultado = await UsuarioProvider.regristar(dados);
 
-    if (resultado instanceof Error) return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ errors: resultado.message });
+    if (resultado instanceof Error) return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ erro: resultado.message });
     else return response.status(StatusCodes.CREATED).json(resultado);
 };
 
 
 export { validarRegistrar, registrar };
+

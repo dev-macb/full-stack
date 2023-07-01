@@ -30,7 +30,7 @@ const entrar = async (request: Request<{}, {}, ICorpo>, response: Response) => {
     if (senhaCorreta) {
         const tokenAcesso = JWTService.gerar({ uid: usuario.id_usuario });
         
-        if (tokenAcesso === 'JWT_SECRET_NOT_FOUND') return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ errors: 'Erro ao gerar o token de acesso' });
+        if (tokenAcesso === 'JWT_SECRET_NOT_FOUND') return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ erros: 'Erro ao gerar o token de acesso' });
         else return response.status(StatusCodes.OK).json({ tokenAcesso });
     }
 

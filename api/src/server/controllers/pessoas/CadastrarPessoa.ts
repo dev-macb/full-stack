@@ -13,8 +13,8 @@ interface ICorpo extends Omit<PessoaModel, 'id_pessoa' | 'criado_em' | 'atualiza
 
 const validarCadastrar = ValidarConsulta((obterEsquema) => ({
     body: obterEsquema<ICorpo>(yup.object().shape({
-        cpf: yup.string().required().min(9),
-        nome_completo: yup.string().required().min(3),
+        cpf: yup.string().required().min(10),
+        nome_completo: yup.string().required().min(4),
         data_nascimento: yup.date().required()
     }))
 }));

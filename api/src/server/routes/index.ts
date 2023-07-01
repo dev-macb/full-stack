@@ -14,13 +14,13 @@ const rotiador = Router();
 rotiador.get('/', (_, response) => { return response.status(StatusCodes.OK).send('Olá Mundo!'); });
 
 // Usuários
-rotiador.get('/entrar', UsuarioController.validarEntrar, UsuarioController.entrar);
+rotiador.post('/entrar', UsuarioController.validarEntrar, UsuarioController.entrar);
 rotiador.post('/registrar', UsuarioController.validarRegistrar, UsuarioController.registrar);
 
 // Pessoas
 rotiador.post('/pessoa', autorizacao, PessoaController.validarCadastrar, PessoaController.cadastrar);
 rotiador.get('/pessoa/:id', autorizacao, PessoaController.validarBuscar, PessoaController.buscar);
-rotiador.get('/pessoas', PessoaController.validarBuscarTodas, PessoaController.buscarTodas);
+rotiador.get('/pessoas', autorizacao, PessoaController.validarBuscarTodas, PessoaController.buscarTodas);
 rotiador.put('/pessoa/:id', autorizacao, PessoaController.validarAtualizar, PessoaController.atualizar);
 rotiador.delete('/pessoa/:id', autorizacao, PessoaController.validarDeletar, PessoaController.deletar);
 

@@ -17,7 +17,7 @@ const development: Knex.Config = {
     },
     pool: {
         afterCreate: (connection: any, done: Function) => {
-            connection.run('PRAGMA foreing_keys = ON');
+            connection.run('PRAGMA foreign_keys = ON');
             done();
         }
     }
@@ -26,12 +26,22 @@ const development: Knex.Config = {
 
 const test: Knex.Config = {
     ...development,
-    connection: ':memory'
+    connection: ':memory:'
 };
 
 
 const production: Knex.Config = {
-    ...development,
+    client: 'pg',
+    connection: {
+        host: process.env.BD_HOST,
+        port: Number(process.env.BD_PORT || 5432),
+        database: process.env.BD_NAME,
+        user: process.env.BD_USER,
+        password: process.env.BD_PASS,
+        ssl: { rejectUnauthorized: false }
+    },
+    seeds: { directory: path.resolve(__dirname, '..', 'seeds') },
+    migrations: { directory: path.resolve(__dirname, '..', 'migrations') }
 };
 
 

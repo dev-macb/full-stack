@@ -8,10 +8,9 @@ import { HashService } from '../../../shared/services';
 const regristar = async (usuario: Omit<UsuarioModel, 'id_usuario' | 'ativo' | 'criado_em' | 'atualizado_em'>): Promise<number | Error> => {
     try {
         const hash = await HashService.criptografar(usuario.senha);
-
         const [resultado] = await Knex(ENomeTabelas.usuarios).insert({ ...usuario, senha: hash }).returning('id_usuario');
 
-        if (typeof resultado === 'object') return resultado.id;
+        if (typeof resultado === 'object') return resultado.id_usuario;
         else if (typeof resultado === 'number') return resultado;
         else return new Error('Erro ao cadastrar o registro');
     } 
